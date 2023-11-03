@@ -39,7 +39,7 @@ foreach ($headers as $column) {
 
 $connection->begin_transaction();
 try {
-    mysqli_query($connection, "DROP TABLE `$targetTable`");
+    mysqli_query($connection, "DROP TABLE IF EXISTS `$targetTable`");
     mysqli_query($connection, "CREATE TABLE $targetTable (
      `id` int(11) NOT NULL AUTO_INCREMENT,
      $tableColumns
